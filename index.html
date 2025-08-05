@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Select a file to upload</h2>
+        <label for="fileInput" class="upload-button">Upload File</label>
+        <input type="file" id="fileInput" />
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const input = document.getElementById('fileInput');
+        const message = document.getElementById('message');
+
+        input.addEventListener('change', function () {
+            if (input.files.length > 0) {
+                const fileName = input.files[0].name;
+                message.textContent = 'File uploaded successfully: ' + fileName;
+                alert('File uploaded successfully!');
+            }
+        });
+    </script>
+</body>
+</html>
